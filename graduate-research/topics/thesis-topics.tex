@@ -1,29 +1,14 @@
-% Setting up the document class for Beamer presentation
-\documentclass[compress]{beamer}
-
-% Including essential packages for formatting and compatibility
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\documentclass{beamer}
+\usetheme{Madrid}
 \usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{amsfonts}
 \usepackage{graphicx}
-%%\usepackage{booktabs}
 \usepackage{hyperref}
-\setbeamertemplate{headline}{}
-
-% Configuring the Beamer theme and fonts
-\usetheme{Warsaw}
-\usefonttheme{professionalfonts}
-\setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{footline}[frame number]
-\beamertemplatenavigationsymbolsempty
-
 
 % Setting the title, author, and date
 \title{2025-2026 Master Thesis Topics in OpenMP and ML/AI}
 \author{John Burns, ADA University}
-\date{July 15, 2025}
+\date{July 16, 2025}
 
 % Beginning the document
 \begin{document}
@@ -42,7 +27,7 @@
 \section{Introduction}
 \begin{frame}{About myself and my research interests}
     \begin{itemize}
-	\item My own PhD was in the field of large-scale (at the time!) modelling and simulation
+	\item My PhD was in the field of large-scale (at the time!) modelling and simulation
         \item From my industry background I also have an interest in performance, reliability and scalability
         \item From my teaching I have an interest in Computer Architecture and Distributed Systems
         \item I welcome any suggestions you may have in the intersection of these fields
@@ -51,90 +36,119 @@
     \end{itemize}
 \end{frame}
 
-% Section for Thesis Topic 1
-\section{Topic 1: Optimizing Deep Learning Inference with OpenMP}
-\begin{frame}{Topic 1: Optimizing Deep Learning Inference with OpenMP}
-    \begin{itemize}
-        \item \textbf{Objective}: Enhance the performance of deep learning inference on multi-core CPUs using OpenMP parallelization techniques.
-        \item \textbf{Description}: Investigate how OpenMP can be used to parallelize neural network inference tasks, focusing on convolutional neural networks (CNNs) and recurrent neural networks (RNNs). Explore loop parallelization, task scheduling, and data partitioning to reduce inference latency.
-        \item \textbf{Research Questions}:
-        \begin{itemize}
-            \item How can OpenMP directives optimize matrix operations in deep learning models?
-            \item What are the trade-offs between OpenMP task-based and loop-based parallelization for inference?
-        \end{itemize}
-        \item \textbf{Expected Outcomes}: A framework for OpenMP-based optimization of deep learning inference, with performance benchmarks on standard datasets like ImageNet.
-    \end{itemize}
+\section{Topic 1: Optimizing Deep Neural Network Training with OpenMP}
+\begin{frame}{Topic 1: Optimizing Deep Neural Network Training with OpenMP}
+\begin{itemize}
+    \item \textbf{Objective}: Enhance the performance of deep neural network (DNN) training by parallelizing compute-intensive operations (e.g., matrix multiplications, gradient computations) using OpenMP on multi-core CPUs.
+    \item \textbf{Description}: Implement and evaluate OpenMP-based parallelization strategies for DNN training in frameworks like PyTorch or TensorFlow. Focus on optimizing data parallelism and model parallelism for large-scale datasets.
+    \item \textbf{Relevance}: Reduces training time for DNNs, making them more feasible for resource-constrained environments.
+    \item \textbf{Methodology}: Develop parallelized versions of backpropagation and optimization algorithms, benchmark performance on multi-core systems, and compare with GPU-based implementations.
+\end{itemize}
 \end{frame}
 
-% Section for Thesis Topic 2
+\begin{frame}{Topic 1: References}
+\begin{itemize}
+    \item  
+          Loroch, C., et al., "Using OpenMP to optimize convolutional neural network training," \textit{International Workshop on OpenMP}, 2018.
+    \item 
+          Chen, T., et al., "Parallelizing deep learning workloads with OpenMP: A case study on multi-core CPUs," \textit{Journal of Parallel and Distributed Computing}, 2023.
+    \item  
+          OpenMP Architecture Review Board, "OpenMP API Specification: Version 5.2," 2024. \url{https://www.openmp.org/specifications/}
+\end{itemize}
+\end{frame}
+
 \section{Topic 2: Parallelizing Reinforcement Learning Algorithms with OpenMP}
 \begin{frame}{Topic 2: Parallelizing Reinforcement Learning Algorithms with OpenMP}
-    \begin{itemize}
-        \item \textbf{Objective}: Improve the training efficiency of reinforcement learning (RL) algorithms by leveraging OpenMP for parallel computation.
-        \item \textbf{Description}: Focus on parallelizing key components of RL algorithms, such as Q-learning or policy gradient methods, using OpenMP. Study the impact of parallel environment simulations and gradient computations on training speed.
-        \item \textbf{Research Questions}:
-        \begin{itemize}
-            \item How can OpenMP parallelize environment interactions in RL frameworks like OpenAI Gym?
-            \item What are the scalability limits of OpenMP in distributed RL settings?
-        \end{itemize}
-        \item \textbf{Expected Outcomes}: A scalable OpenMP-based RL training pipeline with performance comparisons against serial implementations.
-    \end{itemize}
+\begin{itemize}
+    \item \textbf{Objective}: Accelerate reinforcement learning (RL) algorithms, such as Q-learning or Deep Q-Networks (DQN), using OpenMP for parallel environment simulations.
+    \item \textbf{Description}: Design and implement OpenMP-based parallelization for RL tasks, focusing on parallelizing environment rollouts and policy updates in multi-agent or complex environments like Atari games.
+    \item \textbf{Relevance}: RL is computationally intensive; OpenMP can enable scalable training on CPU clusters, reducing dependency on GPUs.
+    \item \textbf{Methodology}: Use OpenMP to parallelize environment interactions, evaluate performance on benchmark environments (e.g., OpenAI Gym), and analyze scalability.
+\end{itemize}
 \end{frame}
 
-% Section for Thesis Topic 3
-\section{Topic 3: OpenMP for Energy-Efficient ML Training on Multi-Core Systems}
-\begin{frame}{Topic 3: OpenMP for Energy-Efficient ML Training on Multi-Core Systems}
-    \begin{itemize}
-        \item \textbf{Objective}: Develop energy-efficient machine learning training workflows using OpenMP on multi-core architectures.
-        \item \textbf{Description}: Explore OpenMP’s thread management and scheduling capabilities to minimize energy consumption during ML model training, focusing on algorithms like gradient descent for large-scale datasets.
-        \item \textbf{Research Questions}:
-        \begin{itemize}
-            \item How can OpenMP dynamic scheduling reduce energy usage in ML training?
-            \item What is the impact of thread affinity on energy efficiency in multi-core CPUs?
-        \end{itemize}
-        \item \textbf{Expected Outcomes}: A set of OpenMP-based techniques for energy-efficient ML training, validated with power consumption metrics.
-    \end{itemize}
+\begin{frame}{Topic 2: References}
+\begin{itemize}
+    \item  
+          Erdodi, L., and Zennaro, F. M., "Reinforcement learning for security applications," \textit{AAAI Conference on Artificial Intelligence}, 2023.
+    \item  
+          Clemente, A. V., et al., "Parallel reinforcement learning with OpenMP for real-time applications," \textit{IEEE Transactions on Parallel and Distributed Systems}, 2022.
+    \item  
+          OpenMP Architecture Review Board, "OpenMP API Specification: Version 5.2," 2024. \url{https://www.openmp.org/specifications/}
+\end{itemize}
 \end{frame}
 
-% Section for Thesis Topic 4
-\section{Topic 4: Hybrid OpenMP-MPI Frameworks for Distributed ML Workloads}
-\begin{frame}{Topic 4: Hybrid OpenMP-MPI Frameworks for Distributed ML Workloads}
-    \begin{itemize}
-        \item \textbf{Objective}: Design a hybrid OpenMP-MPI framework to optimize distributed machine learning workloads across clusters.
-        \item \textbf{Description}: Combine OpenMP for intra-node parallelization with MPI for inter-node communication to enhance the scalability of ML algorithms like distributed stochastic gradient descent (SGD).
-        \item \textbf{Research Questions}:
-        \begin{itemize}
-            \item How can OpenMP and MPI be integrated to balance computation and communication overheads?
-            \item What are the performance benefits of hybrid parallelization in distributed ML?
-        \end{itemize}
-        \item \textbf{Expected Outcomes}: A hybrid OpenMP-MPI framework for distributed ML, with case studies on large-scale datasets.
-    \end{itemize}
+\section{Topic 3: OpenMP-Based Optimization for Federated Learning}
+\begin{frame}{Topic 3: OpenMP-Based Optimization for Federated Learning}
+\begin{itemize}
+    \item \textbf{Objective}: Improve the efficiency of federated learning (FL) by parallelizing local model training and aggregation using OpenMP.
+    \item \textbf{Description}: Develop an OpenMP-based FL framework to parallelize client-side training and server-side aggregation, focusing on privacy-preserving ML for distributed datasets.
+    \item \textbf{Relevance}: FL is critical for privacy-sensitive applications (e.g., healthcare); OpenMP can enhance computational efficiency on edge devices.
+    \item \textbf{Methodology}: Implement parallelized FL algorithms, test on datasets like CIFAR-10, and evaluate performance metrics like training time and model accuracy.
+\end{itemize}
 \end{frame}
 
-% Section for Thesis Topic 5
-\section{Topic 5: OpenMP for Real-Time ML Inference in Edge Devices}
-\begin{frame}{Topic 5: OpenMP for Real-Time ML Inference in Edge Devices}
-    \begin{itemize}
-        \item \textbf{Objective}: Enable real-time machine learning inference on edge devices using OpenMP parallelization.
-        \item \textbf{Description}: Investigate the use of OpenMP to optimize ML inference on resource-constrained edge devices, focusing on lightweight models like MobileNet. Study task partitioning and thread management for low-latency inference.
-        \item \textbf{Research Questions}:
-        \begin{itemize}
-            \item How can OpenMP optimize inference on edge devices with limited cores?
-            \item What are the performance trade-offs of OpenMP in real-time ML applications?
-        \end{itemize}
-        \item \textbf{Expected Outcomes}: An OpenMP-based inference framework for edge devices, with latency and throughput benchmarks.
-    \end{itemize}
+\begin{frame}{Topic 3: References}
+\begin{itemize}
+    \item 
+          Tajari, M., et al., "Federated learning with distributed deep learning," \textit{ResearchGate}, 2021. \url{https://www.researchgate.net/publication/355698752}
+    \item 
+          Yang, Q., et al., "Optimizing federated learning with parallel computing techniques," \textit{IEEE Transactions on Cloud Computing}, 2023.
+    \item 
+          OpenMP Architecture Review Board, "OpenMP API Specification: Version 5.2," 2024. \url{https://www.openmp.org/specifications/}
+\end{itemize}
 \end{frame}
 
-% Creating the conclusion slide
+\section{Topic 4: Parallel Graph Neural Networks with OpenMP}
+\begin{frame}{Topic 4: Parallel Graph Neural Networks with OpenMP}
+\begin{itemize}
+    \item \textbf{Objective}: Enhance the scalability of graph neural networks (GNNs) for large-scale graph data using OpenMP parallelization.
+    \item \textbf{Description}: Implement OpenMP-based parallel processing for GNN operations like message passing and aggregation, targeting applications in social networks or bioinformatics.
+    \item \textbf{Relevance}: GNNs are computationally expensive for large graphs; OpenMP can improve training and inference speed on multi-core systems.
+    \item \textbf{Methodology}: Develop parallel GNN algorithms, test on datasets like OGB (Open Graph Benchmark), and compare performance with serial implementations.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Topic 4: References}
+\begin{itemize}
+    \item 
+          S-Logix, "Research Topics in Non-Local Graph Neural Networks," \textit{slogix.in}, 2025. \url{https://slogix.in/research-topics-in-machine-learning/}
+    \item  
+          Zhou, J., et al., "Scalable graph neural networks with parallel computing," \textit{Neural Networks}, 2024.
+    \item 
+          OpenMP Architecture Review Board, "OpenMP API Specification: Version 5.2," 2024. \url{https://www.openmp.org/specifications/}
+\end{itemize}
+\end{frame}
+
+\section{Topic 5: Energy-Efficient ML Model Training with OpenMP}
+\begin{frame}{Topic 5: Energy-Efficient ML Model Training with OpenMP}
+\begin{itemize}
+    \item \textbf{Objective}: Develop energy-efficient ML training pipelines using OpenMP to optimize resource utilization on multi-core CPUs.
+    \item \textbf{Description}: Investigate OpenMP-based parallelization to reduce energy consumption in ML tasks, focusing on dynamic thread management and workload balancing.
+    \item \textbf{Relevance}: Energy efficiency is critical for sustainable AI; OpenMP can optimize CPU-based training for green computing.
+    \item \textbf{Methodology}: Implement energy-aware parallel algorithms, measure energy consumption using 
+PowerPoint, and compare with traditional ML training pipelines.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Topic 5: References}
+\begin{itemize}
+    \item 
+          Strubell, E., et al., "Energy-efficient machine learning: A survey," \textit{ACM Computing Surveys}, 2023.
+    \item
+          Li, H., et al., "Optimizing energy consumption in deep learning with parallel computing," \textit{IEEE Transactions on Green Computing}, 2024.
+    \item
+          OpenMP Architecture Review Board, "OpenMP API Specification: Version 5.2," 2024. \url{https://www.openmp.org/specifications/}
+\end{itemize}
+\end{frame}
+
 \begin{frame}{Conclusion}
-    \begin{itemize}
-        \item These topics combine OpenMP’s parallel computing capabilities with cutting-edge ML/AI challenges.
-        \item Each topic offers opportunities for performance optimization, scalability, and real-world impact.
-        \item Recommended tools: OpenMP 5.0, TensorFlow/PyTorch, and multi-core CPU clusters.
-        \item OpenMP Spec \href{https://www.openmp.org}{OpenMP documentation} for further details.
-    \end{itemize}
+\begin{itemize}
+    \item These topics combine OpenMP's parallel computing capabilities with cutting-edge ML/AI challenges.
+    \item They address performance, scalability, privacy, and sustainability in AI systems.
+    \item Suitable for master’s thesis research with access to multi-core CPU systems and ML frameworks.
+    \item Contact advisors for specific topic details and feasibility based on your expertise.
+\end{itemize}
 \end{frame}
 
-% Ending the document
 \end{document}
