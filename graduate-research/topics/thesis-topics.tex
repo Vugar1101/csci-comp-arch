@@ -57,10 +57,15 @@
 \section{Topic 2: Help! Advising OpenMP Parallelization}
 \begin{frame}{Topic 2: Help! Advising OpenMP Parallelization}
 \begin{itemize}
-    \item \textbf{Objective}: Reduce the programming burden of OpenMP annotation tasks.
+    \item \textbf{Objective}: Reduce the programming burden of OpenMP directive annotation tasks.
     \item \textbf{Description}: Research DeepTyper-based learning architecture for advising OpenMP Annotation / Parallelization.
-    \item \textbf{Relevance}: Valuable research to reduce the human workload in OpenMP development.
-    \item \textbf{Methodology}: Using CodeT5+ and DeepTyper approaches.
+    \item \textbf{Relevance}: There are over 30 distinct OpenMP directives in version 5.1
+    of the specifications including \textbf{Parallel}, 
+    \textbf{Workshareing}, \textbf{Synchronization}, 
+    \textbf{Tasks}, \textbf{Device/Offloading}
+    (for accelerators like GPUs) constructs.
+    \item \textbf{Methodology}: Using CodeT5+ and/or DeepTyper 
+    approaches for improved directive selection.
 \end{itemize}
 \end{frame}
 
