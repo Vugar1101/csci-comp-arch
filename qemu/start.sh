@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# once the service is running, open another shell
+# and ssh to the raspberry pi using the command
+# ssh user@localhost -p 5555
+# password is password
+
+
 # check to see if qemu-system-aarch64 is installed
 installed=$(which qemu-system-aarch64)
 
@@ -24,7 +30,8 @@ fi
 
 if [ ! -e bullseye.img ]; then
 	echo "getting the filesystem  ..."
-	curl https://storage.googleapis.com/csci-resources/bullseye.img --output bullseye.img 
+	curl https://storage.googleapis.com/csci-resources/bullseye.img.xz --output bullseye.img.xz
+	unxz bullseye.img.xz 
 	echo "done"
 fi
 
