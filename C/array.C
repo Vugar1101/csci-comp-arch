@@ -8,3 +8,5 @@ int main(int argc, char* argv[]) {
 	printf("New number: %d\n", *ptr);
 	return 0;
 }
+
+
