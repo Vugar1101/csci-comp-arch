@@ -9,18 +9,16 @@
 // initialized global variable (r/w)
 int global_var1 = 100;
 
-// initialized global variable (r/o)
-static int global_var2 = 200;
-
 // uninitialized global variable (r/w)
-int global_var3;
+int global_var2;
 
 // initialized global variable (r/w) string
-char global_var4[] = "This is a global string";
+char global_var3[] = "This is a global string";
 
 int main(int argc, char* argv[]) {
-  // the reference to prinf should be mentioned in the .dynstr
-	// the string itself ("Globals are ...") is r/o in .data
-	printf("Globals are %d %d %s\n", global_var1, global_var2, global_var4);
-	return 0;
+        int local_var = 99;
+        // the reference to prinf should be mentioned in the .dynstr
+        // the string itself ("Globals are ...") is r/o in .data
+        printf("Globals are %d %d %s\n", global_var1, global_var2, global_var3);
+        return 0;
 }
