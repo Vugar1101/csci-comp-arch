@@ -66,8 +66,8 @@
 
 1110 00 0 0010 1 0011 0101 00000 00 0 0100
 
-1110 - unconditional
-00 - data processing operation
+1110 - unconditional  
+00 - data processing operation  
 0 - immediate value does not exist
 0010 - *cmd* value for **sub** operation
 1 - **s**
