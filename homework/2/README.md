@@ -74,12 +74,32 @@
 0011 - the first source register Rn **(r3)**  
 0101 - destination register Rd **(r5)**  
 00000 - shamt5 (shift amount five) **(0)**  
-00 - LSL (logical shift left)  ***Note: Since shift amount is 0, nothing will change.***
+00 - LSL (logical shift left)  ***Note: Since shift amount is 0, nothing will change.***  
 0 - constant for Register type  
 0100 - the second source register Rm **(r4)**  
 
 ### subs r5,r3,r4
-------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------  
+b0800002 -> 1011 0000 1000 0000 0000 0000 0000 0010
+
+1011 00 0 0100 0 0000 0000 00000 00 0 0010
+
+1011 - LT (less than)  
+00 - data processing operation  
+0 - immediate value does not exist  
+0100 - *cmd* value for **add** operation  
+0 - no **s**  
+0000 - the first source register Rn **(r0)**  
+0000 - destination register Rd **(r0)**  
+00000 - shamt5 (shift amount five) **(0)**    
+00 - LSL (logical shift left)  ***Note: Since shift amount is 0, nothing will change.***    
+0 - constant for Register type    
+0010 - the second source register Rm **(r2)**  
+
+### addlt r0,r0,r2  
+--------------------------------------------------------------------------------------------
+
+
 
 
 
