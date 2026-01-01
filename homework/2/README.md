@@ -149,7 +149,7 @@ Replace 1s and 0s with each other, then add 1
 # e52de004 -> 1110 0101 0010 1101 1110 0000 0000 0100
 
 1110 01 0 1 0 0 1 0 1101 1110 000000000100  
-&nbsp;I`P U B W L  
+--------I`P U B W L  
 1110 - unconditional  
 01 - memory operation  
 I'  
