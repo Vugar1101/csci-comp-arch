@@ -243,7 +243,7 @@ U
 10 - branch **without** link  
 111111111111111111111001 - signed 2's complement immediate value  
 ***Converting process is below:***
-Replace 1s and 0s with each other, then add 1
+Replace 1s and 0s with each other, then add 1  
 000000000000000000000111  
 (pc+8-7*4)  
 
