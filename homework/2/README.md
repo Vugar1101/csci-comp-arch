@@ -216,7 +216,38 @@ U
 
 ### add r6, r5, r4  
 --------------------------------------------------------------------------------------------  
+# e0535004 -> 1110 0000 0101 0011 0101 0000 0000 0100
 
+1110 00 0 0010 1 0011 0101 00000 00 0 0100
+
+1110 - unconditional  
+00 - data processing operation  
+0 - immediate value does not exist  
+0010 - *cmd* value for **sub** operation  
+1 - **s**  
+0011 - the first source register Rn **(r3)**  
+0101 - destination register Rd **(r5)**  
+00000 - shamt5 (shift amount five) **(0)**  
+00 - LSL (logical shift left)  ***Note: Since shift amount is 0, nothing will change.***  
+0 - constant for Register type  
+0100 - the second source register Rm **(r4)**  
+
+### subs r5, r3, r4  
+--------------------------------------------------------------------------------------------  
+# eafffff9 -> 1110 1010 1111 1111 1111 1111 1111 1001
+
+1110 10 10 111111111111111111111001
+
+1110 - unconditional  
+10 - branch operation  
+10 - branch **without** link  
+111111111111111111111001 - signed 2's complement immediate value  
+***Converting process is below:***
+Replace 1s and 0s with each other, then add 1
+000000000000000000000111  
+(pc+8-7*4)  
+
+### b loop2 
 
 
 
