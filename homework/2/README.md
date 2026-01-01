@@ -165,7 +165,24 @@ U
 000000000100 - immediate value **(4)**
 
 ### str r14, [r13,#-4]!  
+---------------------------------------------------------------------------------------------  
+# e3a0400f -> 1110 0011 1010 0000 0100 0000 0000 1111
+
+1110 00 1 1101 0 0000 0100 0000 00001111  
+
+1110 - unconditional  
+00 - data processing operation  
+1 - immediate value exists  
+1101 - *cmd* value for **mov** operation    
+0 - no **s**  
+0000 - *the first source register will be ignored since it is **mov** operation*  
+0100 - destination register **(r4)**  
+0000 - rotation (since it is 0, **no rotation**)  
+00001111 - immediate value **(15)**  
+
+### mov r4, #15  
 ---------------------------------------------------------------------------------------------
+
 
 
 
