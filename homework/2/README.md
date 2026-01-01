@@ -74,7 +74,7 @@
 0011 - the first source register Rn **(r3)**  
 0101 - destination register Rd **(r5)**  
 00000 - shamt5 (shift amount five) **(0)**  
-00 - LSL (logical shift left)  
+00 - LSL (logical shift left)  ***Note: Since shift amount is 0, nothing will change.***
 0 - constant for Register type  
 0100 - the second source register Rm **(r4)**  
 
