@@ -68,15 +68,15 @@
 
 1110 - unconditional  
 00 - data processing operation  
-0 - immediate value does not exist
-0010 - *cmd* value for **sub** operation
-1 - **s**
-0011 - the first source register Rn **(r3)**
-0101 - destination register Rd **(r5)**
-00000 - shamt5 (shift amount five) **(0)**
-00 - LSL (logical shift left)
-0 - constant for Register type
-0100 - the second source register Rm **(r4)**
+0 - immediate value does not exist  
+0010 - *cmd* value for **sub** operation  
+1 - **s**  
+0011 - the first source register Rn **(r3)**  
+0101 - destination register Rd **(r5)**  
+00000 - shamt5 (shift amount five) **(0)**  
+00 - LSL (logical shift left)  
+0 - constant for Register type  
+0100 - the second source register Rm **(r4)**  
 
 ### subs r5,r3,r4
 ------------------------------------------------------------------------------------------
