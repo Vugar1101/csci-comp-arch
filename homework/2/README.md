@@ -12,4 +12,5 @@
 0000 - rotation (since it is 0, **no rotation**)  
 00000000 - immediate value **(0)**  
 
-### mov r1, #0
+<span style="color:red">### mov r1, #0</span>
+
