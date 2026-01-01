@@ -181,7 +181,44 @@ U
 00001111 - immediate value **(15)**  
 
 ### mov r4, #15  
----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------  
+# e3a0500a -> 1110 0011 1010 0000 0101 0000 0000 1010  
+
+1110 00 1 1101 0 0000 0101 0000 00001010  
+
+1110 - unconditional  
+00 - data processing operation  
+1 - immediate value exists  
+1101 - *cmd* value for **mov** operation    
+0 - no **s**  
+0000 - *the first source register will be ignored since it is **mov** operation*  
+0101 - destination register **(r5)**  
+0000 - rotation (since it is 0, **no rotation**)  
+00001010 - immediate value **(10)**  
+
+### mov r5, #10  
+--------------------------------------------------------------------------------------------  
+# e0856004 -> 1110 0000 1000 0101 0110 0000 0000 0100
+
+1110 00 0 0100 0 0101 0110 00000 00 0 0100
+
+1110 - unconditional    
+00 - data processing operation  
+0 - immediate value does not exist  
+0100 - *cmd* value for **add** operation  
+0 - no **s**  
+0101 - the first source register Rn **(r5)**  
+0110 - destination register Rd **(r6)**  
+00000 - shamt5 (shift amount five) **(0)**    
+00 - LSL (logical shift left)  ***Note: Since shift amount is 0, nothing will change.***    
+0 - constant for Register type    
+0100 - the second source register Rm **(r4)**  
+
+### add r6, r5, r4  
+--------------------------------------------------------------------------------------------  
+
+
+
 
 
 
