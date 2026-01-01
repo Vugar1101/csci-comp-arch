@@ -140,16 +140,32 @@ Replace 1s and 0s with each other, then add 1
 111111111111111111111111 - signed 2's complement immediate value  
 ***Converting process is below:***
 Replace 1s and 0s with each other, then add 1  
-111111111111111111111111
+111111111111111111111111  
 000000000000000000000001  
 (pc+8-1*4)  
 
 ### bl loop2  
 ---------------------------------------------------------------------------------------------  
+# e52de004 -> 1110 0101 0010 1101 1110 0000 0000 0100
 
+1110 01 0 1 0 0 1 0 1101 1110 000000000100  
+        I`P U B W L  
+1110 - unconditional  
+01 - memory operation  
+I'  
+0  -> **immediate exists**  
+LB  
+00 -> **STR**  
+PW  
+11 -> **pre-index**  
+U  
+0  -> **subtract**  
+1101 - the first source register Rn **(r13)**  
+1110 - destination register Rd **(r14)**  
+000000000100 - immediate value **(4)**
 
-
-
+### str r14, [r13,#-4]!  
+---------------------------------------------------------------------------------------------
 
 
 
