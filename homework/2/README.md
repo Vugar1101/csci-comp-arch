@@ -16,4 +16,20 @@
 ---------------------------------------------------------------------------------  
 # e3a0200a -> 1110 0011 1010 0000 0010 0000 0000 1010
 
+1110 00 1 1101 0 0000 0010 0000 00001010
+
+1110 - unconditional  
+00 - data processing operation  
+1 - immediate value exists  
+1101 - *cmd* value for **mov** operation    
+0 - no **s**  
+0000 - *the first source register will be ignored since it is **mov** operation*  
+0010 - destination register **(r2)**  
+0000 - rotation (since it is 0, **no rotation**)  
+00001010 - immediate value **(10)**  
+
+### mov r2, #10  
+----------------------------------------------------------------------------------
+
+
 
