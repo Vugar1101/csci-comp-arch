@@ -247,11 +247,66 @@ Replace 1s and 0s with each other, then add 1
 000000000000000000000111  
 (pc+8-7*4)  
 
-### b loop2 
+### b loop2  
+-------------------------------------------------------------------------------------------
+.global _start
+_start:
+	
+	mov r1, #0  //never used, no need
+	mov r2, #10 // r2 = 10
+	mov r3, #0 // r3 = 0
+	mov r4, #5 // r4 = 5
+loop1:       // loop1 loops 5 times and increasing r0 from 0 to 50
+	subs r5, r3, r4  // condition flags are set. Subtract r4 from r3 and store in r5
+	addlt r0, r0, r2 // r0  is not initialized. So it can contain garbage value. If r3 is less than r4, add r2 to r0 and store in r0
+	addlt r3, r3, #1 // If r3 is less than r4, add 1 to r3 and store in r3
+	blt loop1 // If r3 is less than r4, branch to loop1 (branch back)
+	bl loop2 // branch to loop2 and store address of the next instruction in lr (link register)
+loop2:
+	str r14, [r13,#-4]! //store r14 (lr) in the stack
+	mov r4, #15 // r4 = 15 , overwrite
+	mov r5, #10 // r5 =10 , overwrite
+	add r6, r5, r4 // add r4 to r5 and store in r6
+	subs r5, r3, r4 //condition flags are set. Subtract r4 from r3 and store in r5
+	b loop2 // branch to loop2, infinite loop
 
+  Crash factors:
+  1.Pushing r14 to the stack in the 266th line, but not poping. Push-pop
+  2. Infinite loop (loop2)
+  3. Not storing calee-saved registers in the stack
 
+  Note: There are redundant and missing code lines. For example, since we do not change **lr**, no need storing it in loop2. No need 255th line.No need condition flags in 270th line. However, we need to initialize **r0 = 0** and lr (r13) to any memory address (suggested 0x8000). We need to add **svc #2** after **bl loop2** due to end the program after **loop2** is executed. Adding **bx lr** to branch link register.
 
+## Below is suggested correct form:
 
+.global _start
+_start:
+	mov r0, #0
+	mov r1, #10
+	mov r2, #0
+	mov r3, #5
+	ldr r13, =0x8000 //this part can be interpreted as clobbered register by cpulator but actually we need this.
+loop1:
+	subs r5, r2, r3
+	addlt r0, r0, r1
+	addlt r2, r2, #1
+	blt loop1
+	bl loop2
+  svc #2
+  /* I learned from GPT that, this code can be used for svc exception handling.
+	mov  r0, #0x18          @ angel_SWIreason_ReportException
+  ldr  r1, =0x20026       @ ADP_Stopped_ApplicationExit
+  svc  0x123456           @ semihosting call (CPUlator-supported)
+ */
+loop2:
+	stmfd sp!, {r4-r6}
+	mov r4, #15
+	mov r5, #10
+	mov r6, #0
+	add r6, r5, r4
+	subs r5, r3, r4
+	ldmfd sp!,{r4-r6}
+	bx lr
 
 
 
