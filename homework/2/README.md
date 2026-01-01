@@ -1,3 +1,6 @@
+# Link to the YouTube video
+https://youtu.be/fs80ZpOKgfU
+
 # e3a01000 -> 1110 0011 1010 0000 0001 0000 0000 0000 
 
 1110 00 1 1101 0 0000 0001 0000 00000000
