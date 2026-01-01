@@ -29,7 +29,58 @@
 00001010 - immediate value **(10)**  
 
 ### mov r2, #10  
-----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------  
+# e3a03000 -> 1110 0011 1010 0000 0011 0000 0000 0000
+
+1110 00 1 1101 0 0000 0011 0000 00000000
+
+1110 - unconditional  
+00 - data processing operation  
+1 - immediate value exists  
+1101 - *cmd* value for **mov** operation    
+0 - no **s**  
+0000 - *the first source register will be ignored since it is **mov** operation*  
+0011 - destination register **(r3)**  
+0000 - rotation (since it is 0, **no rotation**)  
+00000000 - immediate value **(0)**  
+
+### mov r3, #0
+--------------------------------------------------------------------------------------
+# e3a04005 -> 1110 0011 1010 0000 0100 0000 0000 0101
+
+1110 00 1 1101 0 0000 0100 0000 00000101
+
+1110 - unconditional  
+00 - data processing operation  
+1 - immediate value exists  
+1101 - *cmd* value for **mov** operation    
+0 - no **s**  
+0000 - *the first source register will be ignored since it is **mov** operation*  
+0100 - destination register **(r4)**  
+0000 - rotation (since it is 0, **no rotation**)  
+00000101 - immediate value **(5)**  
+
+### mov r4, #5
+--------------------------------------------------------------------------------------
+# e0535004 -> 1110 0000 0101 0011 0101 0000 0000 0100
+
+1110 00 0 0010 1 0011 0101 00000 00 0 0100
+
+1110 - unconditional
+00 - data processing operation
+0 - immediate value does not exist
+0010 - *cmd* value for **sub** operation
+1 - **s**
+0011 - the first source register Rn **(r3)**
+0101 - destination register Rd **(r5)**
+00000 - shamt5 (shift amount five) **(0)**
+00 - LSL (logical shift left)
+0 - constant for Register type
+0100 - the second source register Rm **(r4)**
+
+### subs r5,r3,r4
+------------------------------------------------------------------------------------------
+
 
 
 
