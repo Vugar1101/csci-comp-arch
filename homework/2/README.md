@@ -8,8 +8,8 @@
 1101 - *cmd* value for **mov** operation    
 0 - no **s**  
 0000 - *the first source register will be ignored since it is **mov** operation*  
-0001 - destination register **(r1)**
+0001 - destination register **(r1)**  
 0000 - rotation (since it is 0, **no rotation**)  
 00000000 - immediate value **(0)**  
 
-### mov r1, #0
+#### mov r1, #0
